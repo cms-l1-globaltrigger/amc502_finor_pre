@@ -31,17 +31,17 @@
         <node id="username"  		address="0x07" mode="incremental" size="8" permission="r" parameters="type=string"/>
     </node>
     <node id="tcm_regs" address="0x80" description="Registers for TCM module">
-        <node id="cmd_ignbcres"                 address="0x00000000" mask="0x00000001" permission="rw"/> <!-- the check for bcres is ignored when cmd_ignbcres is set. the bx_nr then automatically resets after 0xdeb without checking if bcres is asserted correctly -->
-        <node id="err_det_reset_event"          address="0x00000001" mask="0x00000001" permission="rw"/> <!-- resets err_det when 1 is written to this register -->
+        <node id="cmd_ignbcres"                 address="0x00000000" mask="0x00000001" permission="rw"/>
+        <node id="err_det_reset_event"          address="0x00000001" mask="0x00000001" permission="rw"/>
         <node id="orbit_nr_l"                   address="0x00000014" mask="0xffffffff" permission="r"/>
         <node id="orbit_nr_h"                   address="0x00000015" mask="0x0000ffff" permission="r"/>
-        <node id="bx_nr_max"                    address="0x00000017" mask="0xffffffff" permission="r"/> <!-- should always be equal 0xdeb -->
+        <node id="bx_nr_max"                    address="0x00000017" mask="0xffffffff" permission="r"/>
         <node id="luminosity_seg_nr"            address="0x0000001A" mask="0xffffffff" permission="r"/>
     </node>
     <node id="reset" address="0xA0" mask="0x00000001" description="Pulse reg for reset-pulse"/>
-    <node id="counter_reset" address="0xA0" mask="0x00000002" description="Pulse reg for counter reset-pulse"/>
     <node id="spy12_once_event" address="0xA0" mask="0x00000004" description="Triggers a spy event for a specific orbit"/>
     <node id="spy12_next_event" address="0xA0" mask="0x00000008" description="Triggers a spy event for the next orbity"/>
+    <node id="counter_reset"    address="0xA0" mask="0x00000020" description="Pulse reg for counter reset-pulse"/>
     <node id="rate_cnt_finor_tcds" address="0xB1" permission="r" description="Rate counter for finor to TCDS"/> <!-- HB 2016-06-21: 0xB0 was wrong, 0xB1 is correct -->
     <node id="rate_cnt_loc_finor" address="0xC8" mode="incremental" size="6" permission="r" description="Rate counter for local finor"/>
     <node id="spymem" address="0x01000000" description="Spy memory" mode="incremental" size="4096" permission="r" parameters="type=mem;class=Finor502MemoryImage" description="Memory for spying the input signals"/>
