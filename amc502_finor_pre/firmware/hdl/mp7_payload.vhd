@@ -1,4 +1,5 @@
 -- Version-history: 
+-- HB 2019-04-03: v1.1.0 (introduced release number for firmware tags)
 -- HB 2019-03-29: comment JW 31.8.2017 0x1002 => introduced cntr reset. Fixed cntr reset address.
 -- HB 2016-11-30: 0x1000 => first design for finor preview.
 
